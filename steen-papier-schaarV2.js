@@ -54,17 +54,25 @@ let humanchoice = " ";
 let computerchoice = " ";
 humanOutput.innerHTML = "Jouw keuze komt hier, maak je keuzen!";
 
-//steen
-steenBtn.addEventListener('click', function(event) {
-   buttonpress()
+//button click event in kortere versie
+[steenBtn, papierBtn, schaarBtn].forEach(button => {
+    button.addEventListener('click', function(event) {
+        buttonpress(event);
+    });
 });
 
-//papier
-papierBtn.addEventListener('click', function(event) {
-  buttonpress()
-});
+//hier is de oude code:
+// //steen
+// steenBtn.addEventListener('click', function(event) {
+//    buttonpress()
+// });
 
-//schaar
-schaarBtn.addEventListener('click', function(event) {
-   buttonpress()
-});
+// //papier
+// papierBtn.addEventListener('click', function(event) {
+//   buttonpress()
+// });
+
+// //schaar
+// schaarBtn.addEventListener('click', function(event) {
+//    buttonpress()
+// });
