@@ -1,26 +1,30 @@
- //function werking van button press, human choice en computer choice
- function buttonpress() {
+//function werking van button press, human choice en computer choice
+function buttonpress() {
     humanchoice = event.target.id;
     humanOutput.innerHTML = humanchoice;
     const randomNumber = Math.floor(Math.random() * 3) + 1;
-    if ( randomNumber === 1 ) {
-        computerchoice = 'steen';
+
+    switch (randomNumber) {
+        case 1:
+            computerchoice = 'steen';
+            break;
+        case 2:
+            computerchoice = 'papier';
+            break;
+        case 3:
+            computerchoice = 'schaar';
+            break;
     }
-    if ( randomNumber === 2 ) {
-        computerchoice = 'papier';
-    }
-    if ( randomNumber === 3 ) {
-        computerchoice = 'schaar';
-    }
+    
     computerOutput.innerHTML = computerchoice;
- }
- 
- // const steen papier en schaar
+}
+
+// const steen papier en schaar
 const steenBtn = document.querySelector("#steen")
 const papierBtn = document.querySelector("#papier")
 const schaarBtn = document.querySelector("#schaar")
- 
- // span elemts
+
+// span elemts
 const computerOutput = document.querySelector("#computer");
 console.log(computerOutput);
 computerOutput.innerHTML = "de computers keuze komt hier!";
@@ -33,17 +37,17 @@ resultOutput.innerHTML = "het resultaat is hier te zien!";
 
 // button click event
 //steen
-steenBtn.addEventListener("click", function(event) {
+steenBtn.addEventListener("click", function (event) {
     console.log("klik event triggered: ", event);
 });
 
 //papier
-papierBtn.addEventListener("click", function(event) {
+papierBtn.addEventListener("click", function (event) {
     console.log("klik event triggered: ", event);
 });
 
 //schaar
-schaarBtn.addEventListener("click", function(event) {
+schaarBtn.addEventListener("click", function (event) {
     console.log("klik event triggered: ", event);
 });
 
@@ -56,7 +60,7 @@ humanOutput.innerHTML = "Jouw keuze komt hier, maak je keuzen!";
 
 //button click event in kortere versie
 [steenBtn, papierBtn, schaarBtn].forEach(button => {
-    button.addEventListener('click', function(event) {
+    button.addEventListener('click', function (event) {
         buttonpress(event);
     });
 });
