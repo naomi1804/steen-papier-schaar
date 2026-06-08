@@ -35,22 +35,6 @@ humanOutput.innerHTML = "jouw keuze komt hier, maak je keuze!";
 const resultOutput = document.querySelector("#result");
 resultOutput.innerHTML = "het resultaat is hier te zien!";
 
-// button click event
-//steen
-steenBtn.addEventListener("click", function (event) {
-    console.log("klik event triggered: ", event);
-});
-
-//papier
-papierBtn.addEventListener("click", function (event) {
-    console.log("klik event triggered: ", event);
-});
-
-//schaar
-schaarBtn.addEventListener("click", function (event) {
-    console.log("klik event triggered: ", event);
-});
-
 //button in keuze veranderen(als geklikt komt bij jou keuze)
 //en computer choice
 //humanchoice en computerchoice variable
@@ -62,21 +46,21 @@ humanOutput.innerHTML = "Jouw keuze komt hier, maak je keuzen!";
 [steenBtn, papierBtn, schaarBtn].forEach(button => {
     button.addEventListener('click', function (event) {
         buttonpress(event);
+
+        //resultaat win of niet
+        if (humanchoice === computerchoice) {
+            resultOutput.innerHTML = "Gelijkspel!";
+        }
+        else if (
+            (humanchoice === "steen" && computerchoice === "schaar") ||
+            (humanchoice === "papier" && computerchoice === "steen") ||
+            (humanchoice === "schaar" && computerchoice === "papier")
+        ) {
+            resultOutput.innerHTML = "Jij wint! ";
+        }
+        else {
+            resultOutput.innerHTML = "Computer wint! ";
+        }
     });
 });
 
-//hier is de oude code:
-// //steen
-// steenBtn.addEventListener('click', function(event) {
-//    buttonpress()
-// });
-
-// //papier
-// papierBtn.addEventListener('click', function(event) {
-//   buttonpress()
-// });
-
-// //schaar
-// schaarBtn.addEventListener('click', function(event) {
-//    buttonpress()
-// });
