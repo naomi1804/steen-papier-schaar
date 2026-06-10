@@ -1,4 +1,4 @@
-//function werking van button press, human choice en computer choice
+//function working for button press, human choice and computer choice
 function buttonpress() {
     humanchoice = event.target.id;
     humanOutput.innerHTML = humanchoice;
@@ -19,7 +19,7 @@ function buttonpress() {
     computerOutput.innerHTML = computerchoice;
 }
 
-// const steen papier en schaar
+// const rock paper and sciccors
 const steenBtn = document.querySelector("#steen")
 const papierBtn = document.querySelector("#papier")
 const schaarBtn = document.querySelector("#schaar")
@@ -35,19 +35,20 @@ humanOutput.innerHTML = "jouw keuze komt hier, maak je keuze!";
 const resultOutput = document.querySelector("#result");
 resultOutput.innerHTML = "het resultaat is hier te zien!";
 
-//button in keuze veranderen(als geklikt komt bij jou keuze)
-//en computer choice
-//humanchoice en computerchoice variable
+
+//change button to choice (when you click your option shows)
+//and computer choice
+//humanchoice and computerchoice variable
 let humanchoice = " ";
 let computerchoice = " ";
 humanOutput.innerHTML = "Jouw keuze komt hier, maak je keuzen!";
 
-//button click event in kortere versie
+//button click event short version
 [steenBtn, papierBtn, schaarBtn].forEach(button => {
     button.addEventListener('click', function (event) {
         buttonpress(event);
 
-        //resultaat win of niet
+        //result win or not
         if (humanchoice === computerchoice) {
             resultOutput.innerHTML = "Gelijkspel!";
         }
