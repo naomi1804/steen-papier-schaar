@@ -64,4 +64,4 @@ humanOutput.innerHTML = "Jouw keuze komt hier, maak je keuzen!";
         }
     });
 });
-
+// comment
